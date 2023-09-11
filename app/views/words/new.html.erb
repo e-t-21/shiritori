@@ -1,2 +1,69 @@
 <h1>しりとり単語登録ページ</h1>
 
+<%= form_for @word, local: true do |f| %>
+
+<div>
+  しりとり画像（必須）
+</div>
+<div>
+  <p>クリックしてファイルをアップロード</p>
+  <%= f.file_field :image, id: "word-image" %>
+</div>
+
+<%= f.submit "登録" %>
+
+<div class="field">
+  <%= f.label :name, "単語" %><br />
+  <%= f.text_area :name, class: :form_text %>
+</div>
+
+<div class="field">
+  <%= f.label :name_kana, "単語（ふりがな）" %><br />
+  <%= f.text_area :name_kana, class: :form_text %>
+</div>
+
+<div class="field">
+  <%= f.label :back_name1, "裏読み１" %><br />
+  <%= f.text_area :back_name1, class: :form_text %>
+</div>
+
+<div class="field">
+  <%= f.label :back_name1_kana, "裏読み１（ふりがな）" %><br />
+  <%= f.text_area :back_name1_kana, class: :form_text %>
+</div>
+
+<div class="field">
+  <%= f.label :back_name2, "裏読み２" %><br />
+  <%= f.text_area :back_name2, class: :form_text %>
+</div>
+
+<div class="field">
+  <%= f.label :back_name2_kana, "裏読み２（ふりがな）" %><br />
+  <%= f.text_area :back_name2_kana, class: :form_text %>
+</div>
+
+<div class="field">
+  <%= f.label :back_name3, "裏読み３" %><br />
+  <%= f.text_area :back_name3, class: :form_text %>
+</div>
+
+<div class="field">
+  <%= f.label :back_name3_kana, "裏読み３（ふりがな）" %><br />
+  <%= f.text_area :back_name3_kana, class: :form_text %>
+</div>
+
+<div class="field">
+  <%= f.label :back_name4, "裏読み４" %><br />
+  <%= f.text_area :back_name4, class: :form_text %>
+</div>
+
+<div class="field">
+  <%= f.label :back_name4_kana, "裏読み４（ふりがな）" %><br />
+  <%= f.text_area :back_name4_kana, class: :form_text %>
+</div>
+
+<div class="actions">
+  <%= f.submit "登録する", class: :form_btn  %>
+</div>
+
+<% end %>
