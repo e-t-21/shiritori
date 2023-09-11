@@ -1,24 +1,20 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## words テーブル
 
-Things you may want to cover:
+| Column          | Type   | Options     | 
+| --------------- | ------ | ----------- | 
+| name            | string | null: false | 
+| name_kana       | string | null: false | 
+| back_name1      | string |             | 
+| back_name1_kana | string |             | 
+| back_name2      | string |             | 
+| back_name2_kana | string |             | 
+| back_name3      | string |             | 
+| back_name3_kana | string |             | 
+| back_name4      | string |             | 
+| back_name4_kana | string |             | 
 
-* Ruby version
+### Association
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
