@@ -3,23 +3,18 @@
 <%= form_for @word, local: true do |f| %>
 
 <div>
-  しりとり画像（必須）
-</div>
-<div>
-  <p>クリックしてファイルをアップロード</p>
+  <p>しりとり画像</p>
   <%= f.file_field :image, id: "word-image" %>
 </div>
-
-<%= f.submit "登録" %>
 
 <div class="field">
   <%= f.label :name, "単語" %><br />
   <%= f.text_area :name, class: :form_text %>
 </div>
 
-<div class="field">
-  <%= f.label :name_kana, "単語（ふりがな）" %><br />
-  <%= f.text_area :name_kana, class: :form_text %>
+<div>
+  <p>単語音声</p>
+  <%= f.file_field :name_audio %>
 </div>
 
 <div class="field">
@@ -27,9 +22,9 @@
   <%= f.text_area :back_name1, class: :form_text %>
 </div>
 
-<div class="field">
-  <%= f.label :back_name1_kana, "裏読み１（ふりがな）" %><br />
-  <%= f.text_area :back_name1_kana, class: :form_text %>
+<div>
+  <p>裏読み１音声</p>
+  <%= f.file_field :back_name1_audio %>
 </div>
 
 <div class="field">
@@ -37,9 +32,9 @@
   <%= f.text_area :back_name2, class: :form_text %>
 </div>
 
-<div class="field">
-  <%= f.label :back_name2_kana, "裏読み２（ふりがな）" %><br />
-  <%= f.text_area :back_name2_kana, class: :form_text %>
+<div>
+  <p>裏読み２音声</p>
+  <%= f.file_field :back_name2_audio %>
 </div>
 
 <div class="field">
@@ -47,19 +42,9 @@
   <%= f.text_area :back_name3, class: :form_text %>
 </div>
 
-<div class="field">
-  <%= f.label :back_name3_kana, "裏読み３（ふりがな）" %><br />
-  <%= f.text_area :back_name3_kana, class: :form_text %>
-</div>
-
-<div class="field">
-  <%= f.label :back_name4, "裏読み４" %><br />
-  <%= f.text_area :back_name4, class: :form_text %>
-</div>
-
-<div class="field">
-  <%= f.label :back_name4_kana, "裏読み４（ふりがな）" %><br />
-  <%= f.text_area :back_name4_kana, class: :form_text %>
+<div>
+  <p>裏読み３音声</p>
+  <%= f.file_field :back_name3_audio %>
 </div>
 
 <div class="actions">

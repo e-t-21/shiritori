@@ -41,15 +41,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_090250) do
 
   create_table "words", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "name_kana", null: false
     t.string "back_name1"
-    t.string "back_name1_kana"
     t.string "back_name2"
-    t.string "back_name2_kana"
     t.string "back_name3"
-    t.string "back_name3_kana"
-    t.string "back_name4"
-    t.string "back_name4_kana"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
