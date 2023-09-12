@@ -1,5 +1,4 @@
-<%= form_with model: @word, local: true do |f|%>
-
+<%= form_for @word, local: true do |f| %>
   <div>
     <p>しりとり画像</p>
     <%= f.file_field :image, id: "word-image" %>
