@@ -1,2 +1,23 @@
 <h1>しりとり単語詳細ページ</h1>
 
+<div class="word">
+  <div class="image">
+    <% if @word.image.attached? %>
+      <%= image_tag @word.image.variant(resize: '400x400') %>
+    <% end %>
+  </div>
+  <th>単語</th>
+    <td><%= (@word.name) %></td>
+  </tr>
+  <th>裏読み１</th>
+    <td><%= @word.back_name1.present? ? @word.back_name1 : '【登録なし】' %></td>
+  </tr>
+  <th>裏読み２</th>
+    <td><%= @word.back_name2.present? ? @word.back_name2 : '【登録なし】' %></td>
+  </tr>
+  <th>裏読み３</th>
+    <td><%= @word.back_name3.present? ? @word.back_name3 : '【登録なし】' %></td>
+  </tr>
+</div>
+
+<%= link_to "編集", edit_word_path(@word) %>

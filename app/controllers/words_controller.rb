@@ -17,6 +17,10 @@ class WordsController < ApplicationController
     end
   end
 
+  def show
+    @word = Word.find(params[:id])
+  end
+
   def edit
     @word = Word.find(params[:id])
   end
