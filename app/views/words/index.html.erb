@@ -1,3 +1,25 @@
-<h1>トップページ</h1>
+<h1>Wordsトップページ</h1>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/stylesheets/sanitize.css">
+    <link rel="stylesheet" href="../../assets/stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
+  </head>
 
 <%= link_to "しりとり単語登録", new_word_path %>
+<%= link_to "しりとり単語編集(仮)", new_word_path %>
+
+<div class="word__wrapper">
+<% @words.each do |word| %>
+  <%# <%= link_to word_path(word) do %>
+  <div class="word">
+    <div class="image">
+      <% if word.image.attached? %>
+        <%= image_tag word.image.variant(resize: '200x200') %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+</div>

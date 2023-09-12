@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root 'words#index'
+  root 'games#index'
+  resources :games
   resources :words
 end
