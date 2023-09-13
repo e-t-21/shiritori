@@ -18,7 +18,7 @@
       <div class="image">
         <% if word.image.attached? %>
           <%= link_to word_path(word) do %>
-            <%= image_tag word.image.variant(resize: '200x200') %>
+            <%= image_tag word.image.variant(resize: '150x150') %>
           <% end %>
         <% end %>
       </div>
