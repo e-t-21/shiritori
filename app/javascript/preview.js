@@ -1,7 +1,7 @@
 document.addEventListener('turbo:load', function () {
   // 新規投稿・編集ページのフォームを取得
   const newWordForm = document.getElementById('new_word');
-  const editWordForm = document.getElementById('edit_word');
+  const editWordForm = document.getElementById('edit_word_form');
 
   // プレビューを表示するためのスペースを取得
   const previewList = document.getElementById('previews');
