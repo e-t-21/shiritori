@@ -1,0 +1,29 @@
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../assets/stylesheets/sanitize.css">
+    <link rel="stylesheet" href="../../assets/stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
+  </head>
+
+<body>
+
+<h1>しりとり単語一覧ページ</h1>
+
+<%= link_to "しりとり単語登録", new_word_path %>
+
+<div id="wordList">
+  <% @words.each do |word| %>
+    <div class="wordItem">
+      <% if word.image.attached? %>
+        <%= link_to word_path(word) do %>
+          <%= image_tag word.image.variant(resize: '100x100') %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "もどる", games_path %>
+
+</body>

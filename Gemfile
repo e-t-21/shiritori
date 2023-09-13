@@ -70,3 +70,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+
+gem 'aws-sdk-s3'
