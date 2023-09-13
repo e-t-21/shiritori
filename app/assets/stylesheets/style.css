@@ -9,50 +9,25 @@
   margin: 0 auto;
 }
 
-.word {
-  justify-content: space-around;
-  align-items: center;
-}
-
-.word__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 20px;
-}
-
-.word {
-  width: calc(25% - 10px);
-  margin-bottom: 40px;
-  margin-right: 5px;
-  text-align: left;
-}
-
-.word__img {
-  margin-bottom: 16px;
-}
-
-.word__list {
-  text-align: left;
-}
-
 #wordList {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: 0px;
+  /* 6列 */
+  grid-gap: 10px;
+  /* 画像間の隙間 */
+  margin: 0 50px;
+  /* 両端に10pxの空白を設ける */
+  justify-content: center;
+  /* 中央寄せ */
 }
 
 .wordItem {
-  width: 90%;
+  width: 100%;
+  /* 幅を100%に設定 */
   padding: 10px;
   border: 1px solid #ccc;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.wordItem p {
-  font-weight: bold;
 }

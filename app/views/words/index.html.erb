@@ -12,16 +12,14 @@
 
 <%= link_to "しりとり単語登録", new_word_path %>
 
-<div class="word__wrapper">
+<div id="wordList">
   <% @words.each do |word| %>
-    <div class="word">
-      <div class="image">
-        <% if word.image.attached? %>
-          <%= link_to word_path(word) do %>
-            <%= image_tag word.image.variant(resize: '100x100') %>
-          <% end %>
+    <div class="wordItem">
+      <% if word.image.attached? %>
+        <%= link_to word_path(word) do %>
+          <%= image_tag word.image.variant(resize: '100x100') %>
         <% end %>
-      </div>
+      <% end %>
     </div>
   <% end %>
 </div>
