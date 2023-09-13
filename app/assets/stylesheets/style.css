@@ -36,3 +36,23 @@
 .word__list {
   text-align: left;
 }
+
+#wordList {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 0px;
+}
+
+.wordItem {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wordItem p {
+  font-weight: bold;
+}

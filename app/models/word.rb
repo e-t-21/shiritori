@@ -5,4 +5,5 @@ class Word < ApplicationRecord
   has_one_attached :back_name2_audio
   has_one_attached :back_name3_audio
 
+  validates :name, :image, presence: true
 end
