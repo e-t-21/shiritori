@@ -1,5 +1,4 @@
 class WordsController < ApplicationController
-
   def index
     @words = Word.all
   end
@@ -37,6 +36,7 @@ class WordsController < ApplicationController
   private
 
   def word_params
-    params.require(:word).permit(:name, :back_name1, :back_name2, :back_name3, :image, :name_audio, :back_name1_audio, :back_name2_audio, :back_name3_audio)
+    params.require(:word).permit(:name, :back_name1, :back_name2, :back_name3, :image, :name_audio, :back_name1_audio,
+                                 :back_name2_audio, :back_name3_audio)
   end
 end
