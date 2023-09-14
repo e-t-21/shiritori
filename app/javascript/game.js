@@ -1,5 +1,6 @@
 function generateRandomHiragana() {
-  const hiraganaCharacters = ["あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ", "さ", "し", "す", "せ", "そ", "た", "ち", "つ", "て", "と", "な", "に", "ぬ", "ね", "の", "は", "ひ", "ふ", "へ", "ほ", "ま", "み", "む", "め", "も", "や", "ゆ", "よ", "ら", "り", "る", "れ", "ろ", "わ"];
+  const hiraganaCharacters = ["あ", "り"];
+  // const hiraganaCharacters = ["あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ", "さ", "し", "す", "せ", "そ", "た", "ち", "つ", "て", "と", "な", "に", "ぬ", "ね", "の", "は", "ひ", "ふ", "へ", "ほ", "ま", "み", "む", "め", "も", "や", "ゆ", "よ", "ら", "り", "る", "れ", "ろ", "わ"];
   return hiraganaCharacters[Math.floor(Math.random() * hiraganaCharacters.length)];
 }
 
@@ -41,12 +42,20 @@ function game() {
   // ページ読み込み時に未選択の画像を表示
   document.addEventListener('DOMContentLoaded', displayUnselectedImages);
 
-  // DOM要素を取得
+  // 画像要素を取得
   const wordList = document.getElementById("wordList");
   const shuffleButton = document.getElementById("shuffleButton");
   // 画像要素を取得
   const wordItems = wordList.querySelectorAll(".wordItem");
 
+  //以下、追記した箇所
+
+  // 画像をクリックしたときのハンドラを追加
+  wordItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      console.log("イベント発火"); // コンソールにメッセージを表示
+    });
+  });
 }
 
 document.addEventListener('turbo:load', game);

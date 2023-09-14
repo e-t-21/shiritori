@@ -3,8 +3,8 @@ class GamesController < ApplicationController
   end
 
   def play
-    # データベースから30個の単語を表示
-    @random_words = Word.order(Arel.sql('RAND()')).limit(6)
+    # データベースから単語を表示
+    @random_words = Word.order(Arel.sql('RAND()')).limit(18)
 
     def get_unselected_images
       @unselected_images = Word.where(selected: false)
