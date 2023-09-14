@@ -33,6 +33,13 @@ class WordsController < ApplicationController
     end
   end
 
+  def check_image
+    name = params[:name]
+    word = Word.find_by(name: name)
+
+    render json: { exists: word.present? }
+  end
+
   private
 
   def word_params

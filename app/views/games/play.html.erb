@@ -12,7 +12,7 @@
 
 <div id="wordList">
   <% @random_words.each do |word| %>
-    <div class="wordItem">
+    <div class="wordItem" data-name="<%= word.name %>" data-back-name1="<%= word.back_name1 %>" data-back-name2="<%= word.back_name2 %>" data-back-name3="<%= word.back_name3 %>">
       <%= image_tag word.image.variant(resize: '100x100') %>
     </div>
   <% end %>

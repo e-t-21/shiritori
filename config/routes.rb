@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   end
   resources :words
   get 'games/play', to: 'games#play', as: 'play_game'
+  get '/check_image', to: 'words#check_image'
 end
