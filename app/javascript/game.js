@@ -1,8 +1,16 @@
-const hiraganaCharacters = ["ま"];
-// const hiraganaCharacters = ["あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ", "さ", "し", "す", "せ", "そ", "た", "ち", "つ", "て", "と", "な", "に", "ぬ", "ね", "の", "は", "ひ", "ふ", "へ", "ほ", "ま", "み", "む", "め", "も", "や", "ゆ", "よ", "ら", "り", "る", "れ", "ろ", "わ"];
+// ひらがな文字列のリスト
+const hiraganaCharacters = ["あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ", "さ", "し", "す", "せ", "そ", "た", "ち", "つ", "て", "と", "な", "に", "ぬ", "ね", "の", "は", "ひ", "ふ", "へ", "ほ", "ま", "み", "む", "め", "も", "や", "ゆ", "よ", "ら", "り", "る", "れ", "ろ", "わ"];
+
+// ランダムなインデックスを生成
+const randomIndex = Math.floor(Math.random() * hiraganaCharacters.length);
+
+// ランダムな文字を別の変数にセット
+const randomHiraganaCharacter = hiraganaCharacters[randomIndex];
+
+console.log(randomHiraganaCharacter); // ランダムに選ばれたひらがな文字が表示されます
 
 function generateRandomHiragana() {
-  return hiraganaCharacters[Math.floor(Math.random() * hiraganaCharacters.length)];
+  return randomHiraganaCharacter[Math.floor(Math.random() * randomHiraganaCharacter.length)];
 }
 
 function game() {
@@ -13,7 +21,7 @@ function game() {
   // 画像要素を取得
   const wordItems = wordList.querySelectorAll(".wordItem");
 
-  /// カタカナをひらがなに変換し、記号を除外する関数
+  // カタカナをひらがなに変換し、記号を除外する関数
   function katakanaToHiraganaAndRemoveSymbols(text) {
     // カタカナをひらがなに変換し、全角記号を削除
     return text.replace(/[\u30a1-\u30f6、。，．！？]/g, (match) => {
@@ -46,14 +54,23 @@ function game() {
       // 関数を使って頭文字を取得し、比較
       const checkFirstCharacter = (data) => {
         const firstCharacter = data.charAt(0);
-        return hiraganaCharacters.includes(firstCharacter);
+        return randomHiraganaCharacter.includes(firstCharacter);
       };
 
-      // 各データ属性の頭文字を比較
-      const isNameMatch = checkFirstCharacter(hiraganaName);
-      const isBackName1Match = checkFirstCharacter(hiraganaBackName1);
-      const isBackName2Match = checkFirstCharacter(hiraganaBackName2);
-      const isBackName3Match = checkFirstCharacter(hiraganaBackName3);
+      // name、backName1、backName2、backName3 のいずれかにマッチすれば true
+      const isNameMatch = hiraganaName && checkFirstCharacter(hiraganaName);
+      const isBackName1Match = backName1 && checkFirstCharacter(hiraganaBackName1);
+      const isBackName2Match = backName2 && checkFirstCharacter(hiraganaBackName2);
+      const isBackName3Match = backName3 && checkFirstCharacter(hiraganaBackName3);
+
+      // いずれかの文字が一致するかチェック
+      const isAnyMatch = isNameMatch || isBackName1Match || isBackName2Match || isBackName3Match;
+
+      // 空欄のカラムも false とする
+      // if (!name || !backName1 || !backName2 || !backName3) {
+      //   console.log("空欄のカラムがあります");
+      //   return;
+      // }
 
       // 結果をコンソールに表示
       console.log(`nameの頭文字一致: ${isNameMatch}`);
