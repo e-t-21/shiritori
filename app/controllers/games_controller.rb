@@ -3,6 +3,21 @@ class GamesController < ApplicationController
   end
 
   def play
-    @random_words = Word.order(Arel.sql('RAND()')).limit(30)
+    # データベースから30個の単語を表示
+    @random_words = Word.order(Arel.sql('RAND()')).limit(6)
+
+    def get_unselected_images
+      @unselected_images = Word.where(selected: false)
+      render json: @unselected_images
+    end
+
+  current_character = session[:current_character]
+
+    # クライアント側にデータを渡す
+    respond_to do |format|
+      format.html do
+        render 'play', locals: { current_character: current_character }
+      end
+    end
   end
 end

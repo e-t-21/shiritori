@@ -8,12 +8,12 @@
 
 <h1>しりとりゲーム画面</h1>
 
-<p>現在の単語: <span id="currentWord"></span></p>
+<p>現在の単語: <span id="currentWord"><%= current_character %></span></p>
 
 <div id="wordList">
   <% @random_words.each do |word| %>
     <div class="wordItem">
-      <%= image_tag word.image.variant(resize: '70x70') %>
+      <%= image_tag word.image.variant(resize: '100x100') %>
     </div>
   <% end %>
 </div>
