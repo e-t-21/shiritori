@@ -4,7 +4,7 @@ class GamesController < ApplicationController
 
   def play
     # データベースから単語を表示
-    @random_words = Word.order(Arel.sql('RAND()')).limit(18)
+    @random_words = Word.order(Arel.sql('RAND()')).limit(30)
 
     def get_unselected_images
       @unselected_images = Word.where(selected: false)
